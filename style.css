@@ -1,0 +1,102 @@
+:root {
+  --main-color: rgb(19, 127, 250);
+  --secondary-color: rgba(98, 200, 247, 0.5);
+  --main-color-hover: rgba(14, 232, 244, 0.5);
+  --secondary-color-hover: rgba(98, 200, 247, 1);
+  --background-color: rgb(223, 223, 223);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+h1 {
+  margin: 0 1em 1em 1em;
+}
+h1,
+li {
+  text-transform: uppercase;
+}
+ul {
+  text-align: center;
+  justify-content: center;
+}
+li {
+  display: inline-block;
+  list-style: none;
+}
+a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Header style: */
+.nav-header {
+  height: 5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+}
+.link {
+  margin: 0 1.6em;
+}
+.link a:hover,
+.learn-more a:hover {
+  color: var(--secondary-color-hover);
+}
+
+.open-account {
+  margin: 0 4em;
+}
+.btn-open-account {
+  font-size: 1em;
+  border-radius: 1em;
+  height: 3em;
+  width: 10em;
+  background-color: var(--main-color);
+  color: var(--background-color);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color-hover);
+  color: var(--main-color);
+}
+.main-page-div {
+  margin: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column;
+}
+.header-main-msg {
+  margin: 4em;
+  text-align: center;
+}
+.header-main-msg p {
+  margin: 1em;
+}
+.header-main-img img {
+  max-height: 10em;
+  flex-basis: 15em;
+}
+.btn {
+  font-size: 1em;
+  border-radius: 1em;
+  height: 2em;
+  width: 10em;
+  background-color: var(--main-color);
+  color: var(--background-color);
+  cursor: pointer;
+}
+.hidden {
+  display: hidden;
+  opacity: 0;
+}
