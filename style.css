@@ -4,6 +4,7 @@
   --main-color-hover: rgba(14, 232, 244, 0.5);
   --secondary-color-hover: rgba(98, 200, 247, 1);
   --background-color: rgb(223, 223, 223);
+  --background-color-nav: rgba(223, 223, 223, 0.5);
 }
 * {
   margin: 0;
@@ -18,7 +19,7 @@ body {
 h1 {
   margin: 0 1em 1em 1em;
 }
-h1,
+LINK h1,
 li {
   text-transform: uppercase;
 }
@@ -36,19 +37,29 @@ a {
   font-size: 1.2em;
 }
 
+.section {
+  padding: 4em 10em;
+  border-top: 1px solid rgb(203, 189, 189);
+  min-height: 80vh;
+}
 /* Header style: */
+
 .nav-header {
+  margin-bottom: 1em;
   height: 5em;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--background-color);
+  background-color: var(--background-color-nav);
+  z-index: 100;
 }
 .link {
   margin: 0 1.6em;
 }
-.link a:hover,
-.learn-more a:hover {
+
+.learn-more a:hover,
+.link-hover:hover {
   color: var(--secondary-color-hover);
 }
 
@@ -70,7 +81,7 @@ a {
   color: var(--main-color);
 }
 .main-page-div {
-  margin: 1em;
+  padding: 5em 10em 0.5em 10em;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -83,9 +94,13 @@ a {
 .header-main-msg p {
   margin: 1em;
 }
+.learn-more {
+  margin-top: 2em;
+}
 .header-main-img img {
   max-height: 10em;
   flex-basis: 15em;
+  margin-bottom: 10em;
 }
 .btn {
   font-size: 1em;
@@ -97,6 +112,186 @@ a {
   cursor: pointer;
 }
 .hidden {
-  display: hidden;
+  display: none;
   opacity: 0;
+}
+/* Section 1 */
+#section-1 {
+  display: grid;
+}
+.slider {
+  position: relative;
+  min-height: 15em;
+}
+.slide {
+  box-sizing: border-box;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s;
+}
+.section-title {
+  margin: 1.6em;
+}
+.section-title h2,
+.section-title h1 {
+  margin: 1em;
+  text-align: center;
+}
+.slide h3 {
+  text-align: center;
+  margin: 0.5em;
+}
+.slide p {
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+}
+.bank-descriiption {
+  width: 65%;
+  position: relative;
+}
+.slider-btn {
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+.slider-btn-right {
+  right: 43%;
+  transform: translate(50%, -50%);
+}
+.slider-btn-left {
+  left: 43%;
+  transform: translate(-50%, -50%);
+}
+/*  section 2 */
+
+.section-2-img {
+  max-height: 13em;
+}
+
+.section-2-div h3 {
+  text-align: center;
+  height: 2em;
+}
+.section-2 {
+  display: flex;
+  flex-direction: column;
+}
+.section-2 .content-container {
+  margin: 1em;
+}
+.image-container {
+  align-items: stretch;
+  justify-content: center;
+  display: flex;
+}
+.section-2-div-line {
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-2-div {
+  margin: 1em;
+}
+
+.cookie-message {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+
+  color: #bbb;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+/* Lending section */
+.sec #section-3 {
+  padding: 0;
+}
+.lending-tabs-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lending-tab-btn {
+  margin: 1em;
+  padding: 0.4em;
+  height: 2em;
+  width: 20em;
+  text-align: center;
+}
+.lending-tab-btn-active {
+  transform: translateY(-18%);
+}
+
+.lending-description {
+  display: none;
+  margin: 2em;
+  padding: 0 2em 2em 2em;
+  align-items: center;
+  text-align: center;
+}
+.lending-description-active {
+  display: grid;
+
+  column-gap: 3rem;
+  row-gap: 0.5rem;
+}
+.section-title h3 {
+  text-align: center;
+  margin: 2.5em;
+}
+.lending-description h4 {
+  text-align: center;
+}
+.lending-description p {
+  text-align: center;
+  padding: 2em;
+  margin-bottom: 1em;
+  font-weight: 400;
+  font-size: 1.4em;
+}
+.lending-description button {
+  margin: 0 auto;
+}
+
+/* faq section */
+.questions {
+  align-items: right;
+  text-align: right;
+  padding: 1em;
+  text-decoration: dotted;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  margin-top: 1em;
+}
+.questions ul {
+  text-decoration: dotted;
+}
+/* footer */
+footer {
+  border-top: 1px solid rgb(203, 189, 189);
+  padding: 5em 5em 2em 5em;
+  background-color: #ccc;
+}
+.li-a:hover,
+.link:hover {
+  color: var(--main-color-hover);
+}
+.footer-li-link {
+  padding: 1em;
+
+  margin: 1em;
+}
+footer p {
+  margin: 1em;
+  text-align: center;
+}
+.sticky {
+  position: fixed;
 }
