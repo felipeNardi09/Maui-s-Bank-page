@@ -86,9 +86,52 @@ const stickyNavigation = function () {
   observer.observe(header);
 };
 
+const slideFunc = function () {
+  const slides = document.querySelectorAll('.slide');
+  const btnSliderRight = document.querySelector('.slider-btn-right');
+  const btnSliderLeft = document.querySelector('.slider-btn-left');
+
+  let currentSlide = 0;
+  const maxSlides = slides.length - 1;
+
+  const goToSlide = function (slide) {
+    slides.forEach(
+      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+    );
+  };
+
+  const nextSlide = function () {
+    if (currentSlide === maxSlides) {
+      currentSlide = 0;
+    } else {
+      currentSlide++;
+    }
+
+    goToSlide(currentSlide);
+  };
+
+  const prevSlide = function () {
+    if (currentSlide === 0) {
+      currentSlide = slides.length - 1;
+    } else {
+      currentSlide--;
+    }
+
+    goToSlide(currentSlide);
+  };
+  const init = function () {
+    goToSlide(0);
+  };
+  init();
+
+  btnSliderRight.addEventListener('click', nextSlide);
+  btnSliderLeft.addEventListener('click', prevSlide);
+};
+
 //CALLING FUNCTIONS SECTION
 creatingAndClosingCookieBtn();
 learnMoreScroll();
 scrollNavBtns();
 tabChanger();
 stickyNavigation();
+slideFunc();
